@@ -143,6 +143,7 @@ function Header() {
             </div>
             <div><Link to={'/'} className={'links'}>Головна</Link></div>
             <div><Link to={'/why'} className={'links'}>Чому ми</Link></div>
+            <div><Link to={'/product'} className={'links'}>Товари</Link></div>
             <div><Link to={'/about'} className={'links'}>Про нас</Link></div>
             <div><Link to={'/contacts'} className={'links'}>Контакти</Link></div>
             <div className="specialsLocation">
