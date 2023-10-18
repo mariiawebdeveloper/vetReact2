@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import '../custom.css';
 import {Link} from "react-router-dom";
 import logoImage from './img/Лого.svg';
 
 function Header() {
+    const [tabClicks, setTabClicks] = useState({});
     function changeTheme () {
         let checkBox = document.getElementById('checkbox');
         let body = document.querySelector('body');
@@ -133,6 +134,18 @@ function Header() {
         };
     }, []);
 
+    const handleTabClick = (tabName) => {
+        // Оновлюємо state згідно з кліком на вкладці
+        setTabClicks((prevTabClicks) => ({
+            ...prevTabClicks,
+            [tabName]: (prevTabClicks[tabName] || 0) + 1,
+        }));
+
+        // Логуємо кількість кліків у консоль
+        console.log(`Кількість кліків на вкладці ${tabName}: ${tabClicks[tabName] || 0}`);
+    };
+
+
     return (
         <header>
             <div className="logo">
@@ -141,11 +154,11 @@ function Header() {
                 </div>
                 <div className="logoText">VETCLINIC</div>
             </div>
-            <div><Link to={'/'} className={'links'}>Головна</Link></div>
-            <div><Link to={'/why'} className={'links'}>Чому ми</Link></div>
-            <div><Link to={'/product'} className={'links'}>Товари</Link></div>
-            <div><Link to={'/about'} className={'links'}>Про нас</Link></div>
-            <div><Link to={'/contacts'} className={'links'}>Контакти</Link></div>
+            <div><Link to={'/'} onClick={() => handleTabClick('Головна')} className={'links'}>Головна</Link></div>
+            <div><Link to={'/why'} onClick={() => handleTabClick('Чому ми')} className={'links'}>Чому ми</Link></div>
+            <div><Link to={'/product'} onClick={() => handleTabClick('Товари')} className={'links'}>Товари</Link></div>
+            <div><Link to={'/about'} onClick={() => handleTabClick('Про нас')} className={'links'}>Про нас</Link></div>
+            <div><Link to={'/contacts'} onClick={() => handleTabClick('Контакти')} className={'links'}>Контакти</Link></div>
             <div className="specialsLocation">
                 <div>
                     <div>Збільшити шрифт</div>

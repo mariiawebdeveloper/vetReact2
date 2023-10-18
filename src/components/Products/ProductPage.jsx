@@ -1,23 +1,31 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-export const products = [
-    { id: 1, name: 'Корм для кішок', description: 'Делікатний корм для задоволення смаку вашої кішки.' },
-    { id: 2, name: 'Кіготь для собак', description: 'Найкращий спосіб допомогти вашій собаці тримати свої кігті в хорошому стані.' },
-];
+import { useProducts } from '../../hooks/useProduct';
 
 const ProductPage = () => {
+    const { products } = useProducts();
+
     return (
-        <div>
-            <h2>Товари для тварин</h2>
-            <ul>
+        <div className="products">
+            <p className="shopTitle">Товари для тварин</p>
+            <div className="product-container">
                 {products.map((product) => (
-                    <li key={product.id}>
-                        <Link to={`/product/${product.id}`}>
-                            {product.name}
+                    <div key={product.id} className="product">
+                        <Link to={`/product/${product.id}`} className="product-link">
+                            <img
+                                src={product.photo}
+                                alt={product.name}
+                                className="product-image"
+                            />
+                            <div className="description">
+                                <p>
+                                    <b>{product.name}</b>
+                                </p>
+                            </div>
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
