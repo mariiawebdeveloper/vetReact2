@@ -401,7 +401,6 @@ li {
 
 /**/
 
-/* slider обертка */
 .slider {
     position: relative;
     height: 100%;
@@ -409,13 +408,11 @@ li {
     overflow: hidden;
 }
 
-/*Окно со слайдами*/
 .slider-content {
     position: relative;
     width: 100%;
 }
 
-/*Контейнер для слайдов (передвигаем)*/
 .slider-content-wrapper {
     display: flex;
     height: 300px;
@@ -460,13 +457,11 @@ li {
 }
 
 
-/* Блок с контролами */
 .slider-controls {
     padding: 20px;
     text-align: center;
 }
 
-/* Блок с контролами внутри окна */
 .slider-content__controls {
     position: absolute;
     top: 0;
@@ -597,7 +592,7 @@ button:focus {
     justify-content: space-evenly;
 }
 .nik{
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -704,15 +699,11 @@ button:focus {
     font-size: 20px;
     margin-bottom: 10px;
 }
-
-/* Стили для карты */
 .map {
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
     justify-content: center;
-    height: 400px; /* Задайте желаемую высоту */
+    height: 400px;
     margin-bottom: 50px;
     margin-top: 50px;
 }
@@ -724,9 +715,9 @@ button:focus {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+
     line-height: 117px;
-    color: #FFFFFF;
+
 }
 
 .products {
@@ -793,9 +784,9 @@ button:focus {
 }
 
 .product-description {
-    color: #27ae60; /* Зеленый цвет текста */
-    font-size: 20px; /* Увеличиваем размер текста */
-    margin-top: 10px; /* Добавляем отступ от изображения */
+    color: #27ae60;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .product-image {

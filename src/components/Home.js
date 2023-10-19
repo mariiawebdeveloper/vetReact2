@@ -1,5 +1,4 @@
-import '../custom.css';
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "./Slider";
 import leftArrow from '../components/img/left.png';
 import upArrow from '../components/img/up.svg';
@@ -7,9 +6,29 @@ import catImage from '../components/img/кот.svg';
 import dogImage from '../components/img/собака.svg';
 import vectorImage from '../components/img/Vector.svg';
 
-class Home extends Component {
-    render() {
-        return (
+const Home = () => {
+    const [images, setImages] = useState({
+        leftArrow: leftArrow,
+        upArrow: upArrow,
+        catImage: catImage,
+        dogImage: dogImage,
+        vectorImage: vectorImage,
+    });
+
+
+    useEffect(() => {
+        const storedImages = localStorage.getItem('images');
+
+        if (storedImages) {
+            setImages(JSON.parse(storedImages));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('images', JSON.stringify(images));
+    }, [images]);
+
+    return (
             <div>
                 <div className="blockMain">
                     <div>
@@ -128,7 +147,6 @@ class Home extends Component {
                 </div>
             </div>
         );
-    }
 }
 
 export default Home;
