@@ -23,7 +23,7 @@ class Contacts extends Component {
                     </div>
                     <div className="map">
                         <div>
-                            <iframe
+                            <iframe title={'map'}
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49491.22171159384!2d30.45716189469131!3d50.47706227305704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d32c04fcf927%3A0xe868a1fe1459b626!2z0JLQtdGC0LXRgNC40L3QsNGA0L3QsNGPINC60LvQuNC90LjQutCwIFZldENpdHlQZXRz!5e0!3m2!1sru!2spl!4v1683438171070!5m2!1sru!2spl"
                                 width="600" height="450"  allowFullScreen="" loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"></iframe>

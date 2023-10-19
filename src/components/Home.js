@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Slider from "./Slider";
 import leftArrow from '../components/img/left.png';
 import upArrow from '../components/img/up.svg';
-import catImage from '../components/img/кот.svg';
-import dogImage from '../components/img/собака.svg';
+import catImage from '../components/img/кот.jpg';
+import dogImage from '../components/img/собака.jpg';
 import vectorImage from '../components/img/Vector.svg';
 
 const Home = () => {
