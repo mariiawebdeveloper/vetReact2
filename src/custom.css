@@ -722,11 +722,11 @@ button:focus {
 
 .products {
     display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-repeat: repeat-x;
-    background-position: center;
+    flex-direction: column;
+
+}
+.selector{
+    margin-left: 30px;
 }
 
 .product-container {
